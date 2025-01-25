@@ -5,6 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
 
+/*
+ * Hasher class to hash and verify passwords
+ * @Author: Austin Campbell
+ */
+
 namespace CLI_CMS.src
 {
     internal class Hasher
@@ -13,6 +18,12 @@ namespace CLI_CMS.src
         private const int HashSize = 32;
         private const int iterations = 100_000;
 
+
+        /// <summary>
+        /// Hash the password so it can be stored in the DB.
+        /// </summary>
+        /// <param name="password">Normal text password</param>
+        /// <returns>Hashed password</returns>
         public static string Hash(string password)
         {
             byte[] salt = new byte[SaltSize];
@@ -33,6 +44,12 @@ namespace CLI_CMS.src
         }
 
 
+        /// <summary>
+        /// Verify the password, compare the string with the hashed password
+        /// </summary>
+        /// <param name="password">Regular password entered by user.</param>
+        /// <param name="hashedPassword">Hashed password from the DB.</param>
+        /// <returns></returns>
         public static bool Verify(string password, string hashedPassword)
         {
             //Decode

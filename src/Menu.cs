@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * @Author: Austin Campbell
+ * For main menu options and logo display so the program.cs is not crowded.
+*/
+
+
 namespace CLI_CMS.src
 {
     internal class Menu
@@ -24,11 +30,12 @@ namespace CLI_CMS.src
 
         private string _menu_options = """
             1. Create Client
-            2. View Client
-            3. Update Client
-            4. Delete Client
-            5. Report
-            6. Logout
+            2. View Clients
+            3. View A Client
+            4. Update Client
+            5. Delete Client
+            6. Report
+            7. Logout
             """;
 
         /// <summary>
